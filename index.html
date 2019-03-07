@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  
+<script>
+$(document).ready(function(){
+
+	function removeSpecial(s){
+  		return s.replace(/[\u00E0-\u00F0]/ig,'')
+	}    
+
+	$( "#load" ).click(function() {
+		var ela = document.getElementById("nomeDela").value;
+		var ele = document.getElementById("nomeDele").value;
+
+		if(ele.toUpperCase() != "ANDERSON CHAVES CARNIEL") {
+			$("#message").html("<div class=\'alert alert-danger\' role=\'alert\'> Nome dele está errado, uau como que pode haha </div>");
+		}  
+
+		if(ela.toUpperCase() != "REGIANE ACILEIA GONÇALVES LOPES") {
+			$("#message").html("<div class=\'alert alert-danger\' role=\'alert\'> Nome dela está errada, uau como que pode haha </div> <div class=\'alert alert-warning\' role=\'alert\'> Detalhe - nome inteiro ok? isso inclui o segundo nome haha </div>");
+		} 
+
+		if(ele.toUpperCase() == "ANDERSON CHAVES CARNIEL" && ela.toUpperCase() == "REGIANE ACILEIA GONÇALVES LOPES") {
+			$("#message").html("<div class=\'alert alert-primary\' role=\'alert\'> Muito bem! Você é a pessoa especial do projeto Regiplans. </div>");
+
+			$("#evento").html("<p> Hummm faltam <strong id='c'></strong> para o próximo evento. E este evento éééé </p> <img src=\'http://blog.beyazfirin.com/wp-content/uploads/2017/11/Piknik_11.png\'/><br/><br/><p> Ahhhhh mas o GRANDE evento, o qual faltam <strong id='c2'></strong>, mesmo é esse aqui hahaha <img src=\'https://3.bp.blogspot.com/-CJyT3t5Us6s/V2GZIQ_ZKRI/AAAAAAAAI6c/jty8L97cnrUxzbuETM-UVDzOkjwKmktfgCLcB/s1600/cataratas-do-iguazu-argentina.jpg\'/><br/>");
+
+			$("#contagem").html("<br/><br/>Sem contar que esses eventos incluem a ilustre presença de Regiane, que uau =)) <img width=\'60px\' src=\'https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2018/10/coracao-png.png?fit=2400%2C1706&ssl=1\'/>");
+
+			var evento1 = new Date("Marc 9, 2019 12:00:00").getTime();
+			var evento2 = new Date("Marc 16, 2019 12:00:00").getTime();
+
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+				// Get todays date and time
+				var now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				var distance1 = evento1 - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				var days = Math.floor(distance1 / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance1 % (1000 * 60)) / 1000);
+
+				// Display the result in the element with id="demo"
+				document.getElementById("c").innerHTML = days + " dias " + hours + " horas "
+				+ minutes + " minutos " + seconds + " segundos ";
+
+				// If the count down is finished, write some text 
+				if (distance1 < 0) {
+					clearInterval(x);
+					document.getElementById("c").innerHTML = "Expirado! Opa, evento aconteceu e deve ter sido bom ein!!";
+				}
+
+				var distance2 = evento2 - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				days = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+				hours = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				minutes = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+				seconds = Math.floor((distance2 % (1000 * 60)) / 1000);
+
+				// Display the result in the element with id="demo"
+				document.getElementById("c2").innerHTML = days + " dias " + hours + " horas "
+				+ minutes + " minutos " + seconds + " segundos ";
+
+				// If the count down is finished, write some text 
+				if (distance2 < 0) {
+					clearInterval(x);
+					document.getElementById("c2").innerHTML = "Expirado! Opa, o GRANDE evento aconteceu, agora será decisivo =D!!";
+				}
+			}, 1000);
+
+
+		} 
+	});
+});
+	</script>
+
+<link rel="stylesheet" href="cover.css" crossorigin="anonymous">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+<body>
+
+
+
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Regiplans</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="#">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Regiplans - Planos para um futuro distante... ou não.</h1>
+    <p class="lead">Ei! Você está numa página privada!! Digite o nome das pessoas que se referem ao Regiplans:</p>
+    <div class="input-group input-group-sm mb-3">
+  		<div class="input-group-prepend">
+    		<span class="input-group-text" id="inputGroup-sizing-sm">Nome dela (inteiro):</span>
+  		</div>
+  		<input id="nomeDela" type="text" class="form-control" aria-label="Informe o nome da moça - inteiro" aria-describedby="inputGroup-sizing-sm">
+	</div>
+
+	<div class="input-group input-group-sm mb-3">
+  		<div class="input-group-prepend">
+    		<span class="input-group-text" id="inputGroup-sizing-sm">Nome dele (inteiro):</span>
+  		</div>
+  		<input id="nomeDele" type="text" class="form-control" aria-label="Informe o nome do moço - inteiro" aria-describedby="inputGroup-sizing-sm">
+	</div>
+
+	<div id="message">
+		
+	</div>
+
+
+    <p class="lead">
+      <button type="button" class="btn btn-primary" id="load">Saber mais sobre o Regiplan</button>
+    </p>
+  </main>
+
+<br>
+<br>
+  <div id="evento">
+
+	</div>
+
+	<div id="contagem">
+
+	</div>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Developed by uma pessoa aí que está interessado nessa moça.</p>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
